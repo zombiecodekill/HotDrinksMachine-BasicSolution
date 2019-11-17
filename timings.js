@@ -1,7 +1,6 @@
 let timings = {
-    //TODO: change boilWater back to 10 seconds
-	boilWater: 1000,
-    steepWater: 5000,
+	boilWater: 10000,
+    	steepWater: 5000,
 	brewCoffee: 5000,
 	addPowder: 2000,
 	addSugar: 1000,
