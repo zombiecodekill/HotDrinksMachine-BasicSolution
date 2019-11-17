@@ -26,8 +26,6 @@ var lemonTea = function()
                 setStatusMessage("Lemon Tea canceled");
                 enableDrinksButtons();
             }
-        } else {
-            console.log("ingredients found");
         }
 
         if (canBoilWater()) {		
