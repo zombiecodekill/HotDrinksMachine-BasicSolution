@@ -1,0 +1,66 @@
+<html>
+<head>
+		<meta charset="UTF-8" />
+		<script type="text/javascript" src="store.js"></script>
+		<script type="text/javascript" src="output.js"></script>
+		<script type="text/javascript" src="recipePermissions.js"></script>
+		<script type="text/javascript" src="timings.js"></script>
+		<script type="text/javascript" src="boil.js"></script>
+		<script type="text/javascript" src="hotWater.js"></script>
+		<script type="text/javascript" src="dispenser.js"></script>
+		<script type="text/javascript" src="lemonTea.js"></script>
+		<script type="text/javascript" src="coffee.js"></script>
+		<script type="text/javascript" src="chocolate.js"></script>
+		<script type="text/javascript" src="drinks.js"></script>
+		<script type="text/javascript" src="refill.js"></script>		
+		<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+		<h1>Hot Drinks Machine</h1>
+		<h2>Please select your drink</h2>
+
+	<div class="centered">
+					
+			<button id="tea" class="large button" onclick="makeDrink('tea')">Lemon Tea</button>
+			<button id="coffee" class="large red button" onclick="makeDrink('coffee')">Coffee</button>
+			<button id="chocolate" class="large green button" onclick="makeDrink('chocolate')">Hot Chocolate</button>						  
+	</div>
+		
+	<div class="centered">
+					
+			<button id="milkRefillBtn" class="button" onclick="refill.milk()"></button>
+			<button id="waterRefillBtn" class="red button" onclick="refill.water()"></button>
+			<button id="coffeeRefillBtn" class="green button" onclick="refill.coffee()"></button>						  
+			<button id="cupsRestockBtn" class="blue button" onclick="refill.cups()"></button>				  
+	</div>
+	
+	<div class="centered">					
+			<button id="sugarRestockBtn" class="button" onclick="refill.sugar()"></button>
+			<button id="teaRefillBtn" class="red button" onclick="refill.tea()"></button>
+			<button id="lemonRefillBtn" class="green button" onclick="refill.lemon()"></button>						  
+			<button id="chocolateRefillBtn" class="blue button" onclick="refill.chocolate()"></button>						  
+						
+	</div>
+
+	<div class="centered">					
+			<button id="emptyCoffeeWasteBtn" class="button" onclick="">Empty Coffee Waste</button>
+	</div>
+
+<div id="statusMessages"></div>
+
+<div id="supplies"></div>
+
+<h3>Recipe Permissions</h3>
+<input type="checkbox" id="allowCoffeeWithoutSugar" value="allowCoffeeWithoutSugar" onclick="updateRecipePermissions()">Allow coffee without sugar<br/>
+<input type="checkbox" id="allowCoffeeWithoutMilk" value="allowCoffeeWithoutMilk" onclick="updateRecipePermissions()">Allow coffee without milk<br/>
+<input type="checkbox" id="allowTeaWithoutLemon" value="allowTeaWithoutLemon" onclick="updateRecipePermissions()">Allow tea without lemon<br/>
+<input type="checkbox" id="allowHotWaterOnly" value="allowHotWaterOnly" onclick="updateRecipePermissions()">Allow hot water only<br/>
+<script type="text/javascript">
+	refill.setButtonText();
+	setPermissionsCheckboxes();
+</script>
+
+</body>
+
+
+</html>
