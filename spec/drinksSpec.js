@@ -14,8 +14,8 @@ describe("Drink Maker", function() {
         coffeeWaste: 0
     };
 
-      /*
-  it("cannot make lemon tea without water", function() {
+      
+  xit("cannot make lemon tea without water", function() {
 
 		stocks.water = 0;
 		
@@ -26,7 +26,7 @@ describe("Drink Maker", function() {
 		expect(result).toBe(false);
   });
 
-  it("cannot make lemon tea without tea", function() {
+  xit("cannot make lemon tea without tea", function() {
 
 		stocks.tea = 0;
 		
@@ -35,7 +35,7 @@ describe("Drink Maker", function() {
 		expect(result).toBe(false);
   });
 
-  it("cannot make lemon tea without lemon", function() {
+  xit("cannot make lemon tea without lemon", function() {
 
 		stocks.lemon = 0;
 		
@@ -43,7 +43,7 @@ describe("Drink Maker", function() {
 		
 		expect(result).toBe(false);
   });
-*/
+
 
 	it("returns false by default", function() {
 		let result = makeDrink();
