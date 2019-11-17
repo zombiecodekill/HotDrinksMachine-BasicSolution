@@ -64,9 +64,6 @@ function enableHotChocolateBtn() {
 	let hotChocolateBtn = ready(getHotChocolateBtn); 
 	if (hotChocolateBtn) {
 		hotChocolateBtn.disabled = false;
-		console.log("re-enabled " + hotChocolateBtn);
-	} else {
-		console.log('could not get chocolate button by id');
 	}
 }
 
@@ -75,9 +72,6 @@ function enableCoffeeBtn() {
 	let coffeeBtn = ready(getCoffeeBtn);
 	if (coffeeBtn) {
 		coffeeBtn.disabled = false;
-		console.log("re-enabled " + coffeeBtn);
-	} else {
-		console.log('could not get coffee button by id');
 	}
 }
 
@@ -86,9 +80,6 @@ function enableTeaBtn() {
 	let teaBtn = ready(getTeaBtn);
 	if (teaBtn) {
 		teaBtn.disabled = false;
-		console.log("re-enabled " + teaBtn);
-	} else {
-		console.log('could not get tea button by id');
 	}
 }
 
@@ -130,5 +121,3 @@ function makeDrink(drink) {
 
 	return isMade;
 };
-
-//TODO: Babel for IE11 support
