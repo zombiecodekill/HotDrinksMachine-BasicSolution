@@ -9,10 +9,8 @@
 
 function ready(fn) {
 	if (document.readyState != 'loading') {
-		console.log("document is not loading so calling function");
 	  return fn();
 	} else {
-		console.log("document is loading so adding DOMContentLoaded listener");
 	  document.addEventListener('DOMContentLoaded', fn);
 	}
 }
@@ -90,7 +88,6 @@ function disableDrinksButtons() {
 }
 
 function enableDrinksButtons() {
-	console.log("enable drinks buttons");
 	enableTeaBtn();
 	enableCoffeeBtn();
 	enableHotChocolateBtn();
