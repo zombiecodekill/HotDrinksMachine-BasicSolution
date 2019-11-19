@@ -1,7 +1,6 @@
-var lemonTea = function() 
+class lemonTea 
 {
-
-    var haveAllIngredients = function() {
+    static haveAllIngredients()  {
         /*
             To make lemon tea we need:
             1 unit of water
@@ -17,24 +16,26 @@ var lemonTea = function()
         return stocked;
     }
 
-    var make = function() {
+    make() {
         let isMade=false;
         setStatusMessage("Lemon Tea selected");
 
-        if (!haveAllIngredients()) {    
+        if (!lemonTea.haveAllIngredients()) {    
             if (!confirm('One or more items are out of stock. Do you wish to proceed anyway?')) {
                 setStatusMessage("Lemon Tea canceled");
                 enableDrinksButtons();
             }
+        } else {
+            console.log("ingredients found");
         }
 
         if (canBoilWater()) {		
-            return timerPromise(timings.boilWater).then(waterIsBoiled);
+            return timerPromise(timings.boilWater).then(lemonTea.waterIsBoiled);
         }
         return isMade;
     }
 
-    var served = function(lemonAddedToTea) {
+    static served(lemonAddedToTea) {
         if (lemonAddedToTea) {
             setStatusMessage("Your lemon tea is served");
         } else {
@@ -44,7 +45,7 @@ var lemonTea = function()
         return true;
     }
     
-    var steepWaterInTea = function() {
+    static steepWaterInTea() {
         if (store.inStock.tea()) {
             store.use.tea();
             setStatusMessage("Steeping the water in the tea");
@@ -61,7 +62,7 @@ var lemonTea = function()
         }
     }
     
-    var addLemon = function() {
+    static addLemon() {
         if (store.inStock.lemon()) {
             store.use.lemon();
             setStatusMessage("Adding the lemon");
@@ -72,17 +73,17 @@ var lemonTea = function()
         }
     }
     
-    var drinkDispensed = function(dispensed) {
+    static drinkDispensed(dispensed) {
         if (dispensed) {
-            addLemon();            
-            timerPromise(timings.addLemon).then(served);
+            lemonTea.addLemon();            
+            timerPromise(timings.addLemon).then(lemonTea.served);
         }
     }
     
-    var waterIsSteeped = function(steeped) {
+    static waterIsSteeped(steeped) {
         if (steeped) {
             if (dispenseDrinkIntoPlasticCup()) {
-                timerPromise(timings.pourIntoCup).then(drinkDispensed);
+                timerPromise(timings.pourIntoCup).then(lemonTea.drinkDispensed);
             } else {
                 setStatusMessage("Preparation of your lemon tea could not be completed.");
                 enableDrinksButtons();
@@ -91,15 +92,10 @@ var lemonTea = function()
         return false;
     }
     
-    var waterIsBoiled = function(isBoiled) {
+    static waterIsBoiled(isBoiled) {
         if (isBoiled) {
-            steepWaterInTea();        
-            timerPromise(timings.steepWater).then(waterIsSteeped);
+            lemonTea.steepWaterInTea();        
+            timerPromise(timings.steepWater).then(lemonTea.waterIsSteeped);
         }
     }
-  
-    return {
-        make: make,
-        haveAllIngredients: haveAllIngredients
-    }
-}();
+};
