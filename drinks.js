@@ -102,14 +102,17 @@ function makeDrink(drink) {
 
 	var isMade=false;
 	if (drink === "tea") {
-		isMade = lemonTea.make();
+		// This is an example that uses ES2015 classes
+		isMade = new lemonTea().make();
 	}
 		
 	if (drink === "coffee") {
+		// This is an example that uses the revealing module pattern 
 		isMade = coffee.make();
 	}
 		
 	if (drink === "chocolate") {
+		// This is an example that uses the revealing module pattern
 		isMade = chocolate.make();
 	}
 
