@@ -77,7 +77,7 @@ describe("lemonTea", function() {
 
             spyOn(lemonTea, 'haveAllIngredients').and.callThrough();
             
-            let result = lemonTea.make();
+            let result = new lemonTea().make();
 
             expect(lemonTea.haveAllIngredients).toHaveBeenCalled();
         });
@@ -87,7 +87,7 @@ describe("lemonTea", function() {
 
             setStatusMessage = jasmine.createSpy('setStatusMessage spy');
 
-            lemonTea.make();
+            new lemonTea().make();
 
             expect(setStatusMessage).toHaveBeenCalledWith("Lemon Tea selected");
         });
@@ -95,7 +95,7 @@ describe("lemonTea", function() {
         it("returns a promise to make tea if we can boil the water", function() {
             store.stocks.water = 2;
     
-            let result = lemonTea.make();
+            let result = new lemonTea().make();
 
             expect(result.toString()).toBe("[object Promise]");    
         });
@@ -103,7 +103,7 @@ describe("lemonTea", function() {
         it("returns false if there's no water left", function() {
             store.stocks.water = 0;
 
-            let result = lemonTea.make();
+            let result = new lemonTea().make();
 
             expect(result).toBe(false);
         });
@@ -117,7 +117,7 @@ describe("lemonTea", function() {
                 });
             });
             
-            let result = lemonTea.make();
+            let result = new lemonTea().make();
 
             expect(result).toBe(timerPromise);
             expect(timerPromise).toHaveBeenCalledWith(timings.boilWater);
