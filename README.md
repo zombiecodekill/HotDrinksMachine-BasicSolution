@@ -13,3 +13,5 @@ You can also adjust the timings by editing the timings.js file.
 
 There is a suite of Jasmine specs that can be run using the SpecRunner.html file. 
 To run the specs the latest version of Jasmine and put the jasmine directory inside the HotDrinksMachine directory.
+
+The beginnings of a modern Webpack and ESLint implementation are found at https://github.com/zombiecodekill/HotDrinksMachine-SPA
